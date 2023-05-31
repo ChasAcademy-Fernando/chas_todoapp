@@ -17,20 +17,19 @@ TodoItem-komponenten ska ha en knapp som uppdaterar värdet: done i todo-objekte
 
 TodoItem-komponenten ska ha en delete-knapp som raderar todo-objektet från state. För detta används en callback funktion som tar ett id som input. */
 
-function handleClick() {
-  
-
-}
 
 function App() {
   const [todos, SetTodos] = useState([])
-  const [input, SetInput] = useState()
+  const [input, SetInput] = useState('')
 
   return (
-     <div>
+     <div className=' text-center'>
           <h1>Todo list</h1>
           <Input SetInput={SetInput} SetTodos={SetTodos} todos ={todos} input={input} />
-          <TodoList todos = {todos}/>
+          <div className=' flex justify-center p-4'>
+          <TodoList todos = {todos} SetTodos={SetTodos}/>
+          </div>
+          
     </div>
   )
 }

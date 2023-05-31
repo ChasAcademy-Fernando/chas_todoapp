@@ -1,6 +1,6 @@
 import React from "react";
 import Todo from "./Todo"
-export default function TodoList({todos}){
+export default function TodoList({todos, SetTodos}){
 
 
     return(
@@ -8,7 +8,7 @@ export default function TodoList({todos}){
             <ul>
                 {todos.map((todo)=>(
 
-                    <Todo todo={todo}/>
+                    <Todo key={todo.id} todo={todo} todos={todos} SetTodos={SetTodos}/>
                 ))}
                 
 
